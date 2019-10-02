@@ -1,19 +1,29 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-      {
-        "label": "msvc build",
-        "type": "shell",
-        "command": "cl.exe",
-        "args": ["/EHsc", "/Zi", "/Fe:", "${workspaceFolder}/dist/fingerkey.exe", "main.cpp"],
-        "group": {
-          "kind": "build",
-          "isDefault": true
-        },
-        "presentation": {
-          "reveal": "always"
-        },
-        "problemMatcher": "$msCompile"
-      }
-    ]
-  }
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "msvc build",
+      "type": "shell",
+      "command": "cl.exe",
+      "args": [
+        "/EHsc",
+        "/Zi",
+        "/Fe:${workspaceFolder}\\bin\\debug\\fingerkey.exe",
+        "/Fd:${workspaceFolder}\\bin\\debug\\", 
+        "/Fo:${workspaceFolder}\\bin\\debug\\",
+        "winbio.lib",
+        "advapi32.lib",
+        "main.cpp"
+        
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always"
+      },
+      "problemMatcher": "$msCompile"
+    }
+  ]
+}

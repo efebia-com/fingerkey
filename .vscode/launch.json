@@ -5,12 +5,12 @@
         "name": "(msvc) Launch",
         "type": "cppvsdbg",
         "request": "launch",
-        "program": "${workspaceFolder}/dist/fingerkey.exe",
+        "program": "${workspaceFolder}/bin/debug/fingerkey.exe",
         "args": [],
-        "stopAtEntry": true,
+        "stopAtEntry": false,
         "cwd": "${workspaceFolder}",
         "environment": [],
-        "externalConsole": false
+        "externalConsole": true
       }
     ]
   }
