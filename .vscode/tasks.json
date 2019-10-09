@@ -13,7 +13,8 @@
         "/Fo:${workspaceFolder}\\bin\\debug\\",
         "winbio.lib",
         "advapi32.lib",
-        "main.cpp"
+        "crypt32.lib",
+        "src\\*.cpp"
         
       ],
       "group": {
