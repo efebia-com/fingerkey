@@ -5,8 +5,10 @@
 #include <stdlib.h>
 #include <windows.h>
 
-#define FINGERKEY_FILENAME "test.fngk"
 
+#define FINGERKEY_FILENAME "test.fink"
+
+void SetStdinEcho(bool enable);
 BOOL DirectoryExists(LPCTSTR);
 BOOL WriteToFile(char *FilePath, char *DataToWrite);
 char *ReadFromFile(char *FilePath);

@@ -1,4 +1,7 @@
 #include <sstream>
+#include <iostream>
+#include <string>
+#include <conio.h>
 
 #include "crypto.h"
 #include "auth.h"
@@ -7,8 +10,18 @@
 
 int main()
 {
+    std::cout << "Passphrase: ";
 
-    BYTE *input = (BYTE *)"PASSPHRASE!";
+    SetStdinEcho(false);
+
+    std::string passphrase;
+    std::cin >> passphrase;
+
+    SetStdinEcho(true);
+
+    std::cout << std::endl;
+
+    BYTE *input = (BYTE *)passphrase.c_str();
     LPWSTR descr = L"DESCRIPTION";
 
     DATA_BLOB EncryptOutput;
@@ -51,5 +64,5 @@ int main()
     LocalFree(EncryptOutput.pbData);
     LocalFree(DecryptOutput.pbData);
 
-    HRESULT hr2 = S_OK;
+    getch();
 }
